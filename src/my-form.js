@@ -45,6 +45,8 @@ const MyForm = () => {
 
     const _setSelectedCategory = e => {
         setSelectedCategory(e.target.value);
+
+        // We switched categories, so clear any items previously selected.
         clearSelectedItems();
     }
 
