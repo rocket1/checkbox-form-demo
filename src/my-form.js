@@ -71,7 +71,7 @@ const MyForm = () => {
             const checkboxLabel = selectedCategoryItems[checkboxItemId].label;
             return <CheckBox key={checkboxItemId} id={checkboxItemId} label={checkboxLabel}/>
         })}
-        <button type="button" onClick={submit}>Submit!</button>
+        <button type="button" onClick={submit} disabled={!selectedItems.length}>Submit!</button>
     </div>
 }
 
