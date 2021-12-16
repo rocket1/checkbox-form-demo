@@ -53,7 +53,7 @@ const MyForm = () => {
     const getItemById = itemId => {
         const categories = Object.keys(categoryConfig.current);
         for (let i = 0, len = categories.length; i < len; ++i) {
-            const foundEntry = categoryConfig.current[categories[i]]?.items[itemId];
+            const foundEntry = categoryConfig.current[categories[i]]?.items?.[itemId];
             if (foundEntry) {
                 return foundEntry;
             }
