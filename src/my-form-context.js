@@ -16,10 +16,13 @@ const MyFormProvider = ({children}) => {
         setSelectedItems(newSelectedItems);
     });
 
-    const isItemSelected = itemId => selectedItems.includes(itemId)
+    const isItemSelected = itemId => selectedItems.includes(itemId);
+
+    const clearSelectedItems = () => setSelectedItems([]);
 
     const providerProps = {
         toggleSelectedItem,
+        clearSelectedItems,
         isItemSelected,
         selectedItems
     }

@@ -31,7 +31,7 @@ const _categoryConfig = {
 }
 
 const MyForm = () => {
-    const { selectedItems } = useContext(MyFormContext);
+    const { selectedItems, clearSelectedItems } = useContext(MyFormContext);
     const [selectedCategory, setSelectedCategory] = useState('');
     const categoryConfig = useRef([]);
 
@@ -43,7 +43,10 @@ const MyForm = () => {
 
     const selectedCategoryItems = categoryConfig.current[selectedCategory]?.items ?? [];
 
-    const _setSelectedCategory = e => setSelectedCategory(e.target.value);
+    const _setSelectedCategory = e => {
+        setSelectedCategory(e.target.value);
+        clearSelectedItems();
+    }
 
     const getItemById = itemId => {
         const categories = Object.keys(categoryConfig.current);
